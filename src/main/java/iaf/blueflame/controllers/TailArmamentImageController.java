@@ -17,14 +17,5 @@ public class TailArmamentImageController {
         this.tailArmamentImageService = tailArmamentImageService;
     }
 
-    @GetMapping("/preflight/{tailId}")
-    public String test(@PathVariable long tailId) {
-        return "Hello";
-    }
 
-    @PostMapping("/preflight")
-    public TailArmamentImages uploadPreflightImage(@RequestParam("tailId") Long tailId,
-                                                   @RequestParam("file") MultipartFile file) throws IOException {
-        return this.tailArmamentImageService.uploadPreflightImage(tailId, file);
-    }
 }
