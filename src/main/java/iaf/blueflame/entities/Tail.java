@@ -12,8 +12,10 @@ public class Tail {
     @GeneratedValue
     Long id;
     String description;
-    Long squadId;
+    @ManyToOne
+    @JoinColumn(name = "squad", nullable = false)
+    Squad squad;
     @OneToOne
-    @JoinColumn(name = "id", nullable = false)
+    @JoinColumn(name = "missionStatus", nullable = false)
     MissionStatus missionStatus;
 }

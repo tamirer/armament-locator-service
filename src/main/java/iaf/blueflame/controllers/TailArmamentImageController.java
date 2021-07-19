@@ -9,18 +9,12 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.IOException;
 
 @RestController
-@RequestMapping(value = "/bizim")
+@RequestMapping(value = "/images")
 public class TailArmamentImageController {
-
     private final TailArmamentImageService tailArmamentImageService;
 
     public TailArmamentImageController(TailArmamentImageService tailArmamentImageService) {
         this.tailArmamentImageService = tailArmamentImageService;
-    }
-
-    @GetMapping
-    public ResponseEntity biza() {
-        return ResponseEntity.ok().build();
     }
 
     @GetMapping("/preflight/{tailId}")
