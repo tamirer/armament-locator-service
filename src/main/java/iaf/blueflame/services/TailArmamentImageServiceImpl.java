@@ -43,12 +43,7 @@ public class TailArmamentImageServiceImpl implements TailArmamentImageService {
     }
 
     @Override
-    public TailArmamentImages getPreflightImage(long tailId) {
+    public TailArmamentImages getImages(long tailId) {
         return tailArmamentImagesRepository.findByTailId(tailId);
-    }
-
-    @Override
-    public byte[] getPostflightImage(long tailId) {
-        return tailArmamentImagesRepository.findByTailId(tailId).getAfterFlightImage();
     }
 }
