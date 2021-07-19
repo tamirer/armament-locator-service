@@ -20,7 +20,7 @@ public class TailArmamentImages {
     private Long id;
 
     @OneToOne
-    @JoinColumn(name = "id")
+    @JoinColumn(name = "tail")
     private Tail tail;
 
     @Lob

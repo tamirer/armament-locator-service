@@ -16,6 +16,6 @@ public class Tail {
     @JoinColumn(name = "squad", nullable = false)
     Squad squad;
     @OneToOne
-    @JoinColumn(name = "missionStatus", nullable = false)
+    @JoinColumn(name = "mission_status", nullable = false)
     MissionStatus missionStatus;
 }
