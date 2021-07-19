@@ -14,9 +14,11 @@ import java.util.List;
 @RequestMapping("/tails")
 public class TailController {
     private final TailService tailService;
+    private final TailArmamentImageService tailArmamentImageService;
 
-    public TailController(TailService tailService) {
+    public TailController(TailService tailService, TailArmamentImageService tailArmamentImageService) {
         this.tailService = tailService;
+        this.tailArmamentImageService = tailArmamentImageService;
     }
 
     @GetMapping
