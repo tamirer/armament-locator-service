@@ -1,7 +1,6 @@
 package iaf.blueflame.repositories;
 
 import iaf.blueflame.entities.Squad;
-import org.springframework.context.annotation.Bean;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
