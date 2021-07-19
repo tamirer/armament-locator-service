@@ -22,6 +22,15 @@ public class TailArmamentImageServiceImpl implements TailArmamentImageService {
     }
 
 
+    public TailArmamentImages uploadPostflightImage(Long tailId, MultipartFile file) throws IOException {
+        Tail tail = tailRepository.findById(tailId).orElseThrow(ResourceNotFoundException::new);
+        TailArmamentImages tailArmamentImages = TailArmamentImages.builder()
+                .tail(tail)
+                .afterFlightImage(file.getBytes())
+                .build();
+        return tailArmamentImagesRepository.save(tailArmamentImages);
+    }
+
     public TailArmamentImages uploadPreflightImage(Long tailId, MultipartFile file) throws IOException {
         Tail tail = tailRepository.findById(tailId).orElseThrow(ResourceNotFoundException::new);
         TailArmamentImages tailArmamentImages = TailArmamentImages.builder()
@@ -29,5 +38,15 @@ public class TailArmamentImageServiceImpl implements TailArmamentImageService {
                 .preflightImage(file.getBytes())
                 .build();
         return tailArmamentImagesRepository.save(tailArmamentImages);
+    }
+
+    @Override
+    public byte[] getPreflightImage(long tailId) {
+        return tailArmamentImagesRepository.findById(tailId).get().getPreflightImage();
+    }
+
+    @Override
+    public byte[] getPostflightImage(long tailId) {
+        return tailArmamentImagesRepository.findById(tailId).get().getAfterFlightImage();
     }
 }

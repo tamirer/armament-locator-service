@@ -49,6 +49,16 @@ public class TailController {
     @PostMapping("{tailId}/afterflight")
     public TailArmamentImages uploadAfterFlightImage(@PathVariable long tailId,
                                                      @RequestBody MultipartFile file) throws IOException {
-        return this.tailArmamentImageService.uploadPreflightImage(tailId, file);
+        return this.tailArmamentImageService.uploadPostflightImage(tailId, file);
+    }
+
+    @GetMapping("{tailId}/afterflight")
+    public byte[] getAfterFlightImage(@PathVariable long tailId) {
+        return this.tailArmamentImageService.getPostflightImage(tailId);
+    }
+
+    @GetMapping("{tailId}/preflight")
+    public byte[] getPreflightImage(@PathVariable long tailId) {
+        return this.tailArmamentImageService.getPreflightImage(tailId);
     }
 }
