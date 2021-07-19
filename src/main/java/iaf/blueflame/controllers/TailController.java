@@ -46,6 +46,7 @@ public class TailController {
         return this.tailArmamentImageService.uploadPreflightImage(tailId, file);
     }
 
+    @CrossOrigin
     @PostMapping("{tailId}/afterflight")
     public TailArmamentImages uploadAfterFlightImage(@PathVariable long tailId,
                                                      @RequestBody MultipartFile file) throws IOException {
