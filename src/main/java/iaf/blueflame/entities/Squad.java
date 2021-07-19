@@ -8,8 +8,7 @@ import javax.persistence.*;
 @Data
 public class Squad {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue
     Long id;
-
-    String name;
+    String description;
 }
