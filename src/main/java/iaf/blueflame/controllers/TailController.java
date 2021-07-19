@@ -28,8 +28,16 @@ public class TailController {
     }
 
     @GetMapping("{tailId}")
-    public Tail getSquad(@PathVariable long tailId) {
+    public Tail getTail(@PathVariable long tailId) {
         return tailService.getTail(tailId);
+    }
+
+    @PostMapping("{tailId}/changeStatus")
+    public void changeStatus(@PathVariable long tailId,
+                             @RequestParam("status") long statusId) {
+        Tail tail = this.getTail(tailId);
+        tail.setMissionStatus(tailService.getStatus(statusId));
+        this.tailService.updateTailStatus(tail);
     }
 
     @PostMapping("{tailId}/preflight")
