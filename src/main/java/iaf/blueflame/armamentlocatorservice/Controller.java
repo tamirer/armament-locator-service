@@ -13,7 +13,7 @@ public class Controller {
     @Autowired
     MyService service;
 
-    @GetMapping("squads")
+    @GetMapping("/squads")
     public List<Squad> getSquads(){
         return service.getSquads();
     }
