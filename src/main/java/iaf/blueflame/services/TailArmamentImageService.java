@@ -10,7 +10,7 @@ public interface TailArmamentImageService {
 
     TailArmamentImages uploadPostflightImage(Long tailId, MultipartFile file) throws IOException;
 
-    byte[] getPreflightImage(long tailId);
+    TailArmamentImages getPreflightImage(long tailId);
 
     byte[] getPostflightImage(long tailId);
 }

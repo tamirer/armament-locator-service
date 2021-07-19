@@ -59,7 +59,7 @@ public class TailController {
     }
 
     @GetMapping("{tailId}/preflight")
-    public byte[] getPreflightImage(@PathVariable long tailId) {
+    public TailArmamentImages getPreflightImage(@PathVariable long tailId) {
         return this.tailArmamentImageService.getPreflightImage(tailId);
     }
 }
