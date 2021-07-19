@@ -1,6 +1,7 @@
 package iaf.blueflame.armamentlocatorservice;
 
-import Entities.Squad;
+import iaf.blueflame.entities.Squad;
+import iaf.blueflame.repositories.MyRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -8,7 +9,8 @@ import java.util.List;
 
 @Service
 public class MyService {
-    @Autowired MyRepository repository;
+    @Autowired
+    MyRepository repository;
 
     public List<Squad> getSquads() {
         return repository.findAll();

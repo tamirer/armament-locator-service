@@ -1,4 +1,4 @@
-package Entities;
+package iaf.blueflame.entities;
 
 import lombok.Data;
 import javax.persistence.*;

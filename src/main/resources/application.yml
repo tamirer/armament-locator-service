@@ -5,3 +5,11 @@ spring:
       path: /h2-console
       settings:
         web-allow-others: true
+  jpa:
+    properties:
+      hibernate:
+        generate_statistics: false
+        show_sql: false
+        format_sql: false
+        enable_lazy_load_no_trans: false
+    open-in-view: false

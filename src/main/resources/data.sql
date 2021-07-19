@@ -5,7 +5,6 @@ CREATE TABLE squads (
                               name VARCHAR(250) NOT NULL
 );
 
-INSERT INTO squads (name) VALUES
-('069'),
-('100'),
-('114');
+INSERT INTO squads (name) VALUES ('069');
+INSERT INTO squads (name) VALUES ('100');
+INSERT INTO squads (name) VALUES ('114');
