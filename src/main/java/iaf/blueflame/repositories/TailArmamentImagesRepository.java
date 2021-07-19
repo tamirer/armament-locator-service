@@ -9,4 +9,7 @@ import org.springframework.stereotype.Repository;
 public interface TailArmamentImagesRepository extends JpaRepository<TailArmamentImages, Long> {
     @Query("FROM TailArmamentImages where tail.id = ?1")
     TailArmamentImages findByTailId(Long tailId);
+
+    @Query("DELETE FROM TailArmamentImages where tail.id = ?1")
+    void deleteByTailId(Long tailId);
 }

@@ -28,6 +28,7 @@ public class TailArmamentImageServiceImpl implements TailArmamentImageService {
                 .tail(tail)
                 .afterFlightImage(file.getBytes())
                 .build();
+        tailArmamentImagesRepository.deleteByTailId(tailId);
         return tailArmamentImagesRepository.save(tailArmamentImages);
     }
 
@@ -37,6 +38,7 @@ public class TailArmamentImageServiceImpl implements TailArmamentImageService {
                 .tail(tail)
                 .preflightImage(file.getBytes())
                 .build();
+        tailArmamentImagesRepository.deleteByTailId(tailId);
         return tailArmamentImagesRepository.save(tailArmamentImages);
     }
 
