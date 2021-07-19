@@ -1,4 +1,4 @@
-package iaf.blueflame.armamentlocatorservice;
+package iaf.blueflame.entities;
 
 import lombok.Data;
 
